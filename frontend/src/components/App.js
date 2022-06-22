@@ -1,33 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Header from "./Header";
-import ConsentBox from "./ConsentBox";
+// import ConsentBox from "./ConsentBox";
 import PostList from "./PostList";
 import NewPost from "./NewPost"
-import './App.css';
-import {Route} from "react-router-dom";
+// import {Route} from "react-router-dom";
+// import { Routes } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
-  const [posts , setPosts] = useState([]);
   
-  useEffect(() => {
-    fetch("http://localhost:9292/")
-      .then((r) => r.json())
-      .then((posts) => setPosts(posts));
-  }, []);
 
-  function handleAddPost(newPost){
-    setPosts([...posts, newPost]);
-  }
+  console.log('hola')
+
+  // function handleAddPost(newPost){
+  //   setPosts([...posts, newPost]);
+  // }
 
 
   return (
     <div className="App">
-      <ConsentBox />
+      {/* <ConsentBox /> */}
       <Header />
-        <Route exact path = "/">
-          <PostList posts={posts}/>
+      {/* <Routes>
+        <Route exact path = "/post">
+          <PostList />
         </Route>
-      <NewPost onAddPost={handleAddPost}/>
+        <Route exact path = "/"></Route>
+      </Routes> */}
+      <PostList />
+      <NewPost />
     </div>
   );
 }
