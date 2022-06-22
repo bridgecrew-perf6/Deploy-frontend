@@ -3,16 +3,17 @@ import React from "react";
 import Vote from './Vote'
 
 function PostCard({post}) {
-    const {content} = post
+
     
     //create a like button using state?
     
     return (
-        <div>
-            <li className="post">
-              <p>{content}</p>
-              <Vote></Vote>
-            </li>
+        <div className="card">
+            <div className="post">
+              <p>{post.content}</p>
+              <p className="date">{new Date(post.created_at).toLocaleString()}</p>
+            </div>
+            {/* <Vote></Vote> */}
         </div>
       );
 }
