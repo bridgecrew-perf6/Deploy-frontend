@@ -1,8 +1,9 @@
 import React from "react";
 // import Card from 'react-bootstrap/Card'
 import Vote from './Vote'
+import NewComment from "./NewComment";
 
-function PostCard({post}) {
+function PostCard({post, change, setChange}) {
 
     
     //create a like button using state?
@@ -12,8 +13,11 @@ function PostCard({post}) {
             <div className="post">
               <p>{post.content}</p>
               <p className="date">{new Date(post.created_at).toLocaleString()}</p>
+              <form></form>
             </div>
-            {/* <Vote></Vote> */}
+            <NewComment post_id={post.id} comments={post.comments} change={change}
+            setChange={setChange}></NewComment>
+
         </div>
       );
 }
