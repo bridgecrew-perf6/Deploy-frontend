@@ -1,20 +1,23 @@
 import React from "react";
 // import Card from 'react-bootstrap/Card'
-import Vote from './Vote.js'
-import NewComment from './NewComment.js'
+import Vote from './Vote'
+import NewComment from "./NewComment";
 
-function PostCard({post}) {
-    const {content} = post
+function PostCard({post, change, setChange}) {
+
     
     //create a like button using state?
     
     return (
-        <div>
-            <li className="post">
-              <p>{content}</p>
-              <Vote></Vote>
-              <NewComment/>
-            </li>
+        <div className="card">
+            <div className="post">
+              <p>{post.content}</p>
+              <p className="date">{new Date(post.created_at).toLocaleString()}</p>
+              <form></form>
+            </div>
+            <NewComment post_id={post.id} comments={post.comments} change={change}
+            setChange={setChange}></NewComment>
+
         </div>
       );
 }
