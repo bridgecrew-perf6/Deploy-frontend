@@ -1,36 +1,37 @@
 import React, {useState} from "react";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
-function NewPost({onAddPost}) {
+function NewPost({change, setChange}) {
+  const [newPost, setNewPost]=useState("")
 
-  const [content, setContent]=useState('')
-
-  
-  function handleSubmit(){
-    const newPostForm = {
-      content,
-    }
-    fetch("http://localhost:9292/posts",{
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(newPostForm),
-    })
-    .then((r) => r.json())
-    .then(onAddPost)
+  function handleSubmit(e){
+    e.preventDefault()
+    if (newPost!==""){
+        fetch("http://localhost:9292/posts", {
+          method:"POST",
+          headers:{
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            content: newPost,
+            like: 0, 
+            phase_id: 3,
+          }),
+        }).then(()=>setChange(!change));
+        setNewPost("")
+    } 
   }
-
+//Make the button next to it 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <input 
-      className="content" 
-      placeholder="Write post" 
-      onChange={(e)=>setContent(e.target.value)}/>
-      <input 
-      className="submit"
-      type="submit" 
-      value="Submit Post" />
-    </form>
+    <form class="card_post" onSubmit={handleSubmit}>
+      <span><input type="text" 
+             class="form-control mr-3" 
+             placeholder="Make a Post" 
+             value={newPost}         
+             onChange={(e) => setNewPost(e.target.value)} ></input>       
+      <Button className="submitButton" variant="primary" type="submit" value="Submit">Post</Button></span>
+  </form>
   );
 }
 

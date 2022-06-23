@@ -82,3 +82,18 @@ body {
   
 }
 
+
+.h2a {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  visibility: visible;
+}
+
+.h2b {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  visibility: hidden;
+}
+
