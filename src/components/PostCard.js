@@ -38,8 +38,10 @@ function PostCard({post, change, setChange}) {
               <p>{post.content}</p>
               {/* <button className={(show)?  'h2a':'h2b'} variant="primary" >X</button> */}
               {show? <button className='h2a' onClick={() => handleClick(post.id)}>x</button> : ''}
+              <Vote post_like={post.like} post_id={post.id} change={change}
+            setChange={setChange}></Vote>
               <p className="date">{new Date(post.created_at).toLocaleString()}</p>
-              <form></form>
+            
             </div>
             <NewComment post_id={post.id} comments={post.comments} change={change}
             setChange={setChange}></NewComment>

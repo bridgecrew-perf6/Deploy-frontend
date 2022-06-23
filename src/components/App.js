@@ -18,6 +18,7 @@ function App() {
         <NewPost onAddPost={handleAddPost}/> */}
         
         <Route exact path="/Home">
+          <Header></Header>
           <PostList/>
         </Route>
         

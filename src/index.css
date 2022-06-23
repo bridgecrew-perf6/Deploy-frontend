@@ -7,6 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+div#root{
+  background-image: linear-gradient(0deg, rgba(164,254,217,1), rgba(42,103,162,1));
+  background-blend-mode: multiply;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -17,6 +22,7 @@ code {
   background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
   margin-top: 16px;
   margin-bottom: 16px;
+  margin-right: 25px;
   padding: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -83,9 +89,136 @@ body {
 }
 
 
+
 .h2a {
   position: absolute;
   right: 10px;
   top: 10px;
 }
+
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans%7CMountains+of+Christmas&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* .wrapper .multi_color_border{
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #37a000 0% , #37a000 25%, #494949 25%, #494949 50%, #37a000 50%, #37a000 75%, #494949 75%, #494949 100%);
+} */
+
+.wrapper .top_nav{
+  margin-top: 5px;
+  width: 100%;
+  height: 65px;
+  background: #fff;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper .top_nav .left{
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .top_nav .left .logo p{
+  font-size: 36px;
+  font-weight: bold;
+  color: #0093a0;
+  font-family: "Potta One";
+  margin-right: 25px;
+}
+
+.wrapper .top_nav .left .logo p span{
+  color: #0093a0;
+  font-family: "Potta One", cursive;
+}
+
+
+.wrapper .top_nav .right ul{
+  display: flex;
+}
+
+.wrapper .top_nav .right ul li{
+  margin: 0 12px;
+}
+
+.wrapper .top_nav .right ul li{
+  background:  #0093a0;
+  margin-right: 0;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.wrapper .top_nav .right ul li:hover{
+  background: #494949;
+}
+
+.wrapper .top_nav .right ul li a{
+  display: block;
+  padding: 8px 10px;
+  color: #fff;
+}
+
+.wrapper .top_nav .right ul li{
+   color: #fff;
+}
+
+.wrapper .bottom_nav{
+  width: 100%;
+  background: #f9f9f9;
+  height: 45px;
+  padding: 0 50px;
+}
+
+.wrapper .bottom_nav ul{
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper .bottom_nav ul li a{
+  color: #494949;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.wrapper .banner img{
+  width: 100%;
+  height: 400px;
+}
+
+/* CONSENT BOX CSS */
+
+img.FlatYakImg {
+  position: center;
+}
+
+.AgreeButton {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
 

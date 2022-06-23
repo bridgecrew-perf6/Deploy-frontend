@@ -24,9 +24,6 @@ function NewComment({comments, change, setChange, post_id}){
           setError(!error)
         }
       }
-
-
-    
     return(
         <div class="container mt-5 mb-5">
                 <div class="coment-bottom bg-white p-2 px-4">
