@@ -7,35 +7,37 @@ function PostCard({post, change, setChange}) {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShow(!show);
-    }, 1000);
-    return () => clearTimeout(timer);
+    if (new Date()-new Date(post.created_at)<10000){
+      setShow(true);
+
+      setTimeout(() => {
+        setShow(false);
+      }, 10000);
+    }
+    else {
+        setShow(false);
+    }
+    
+    
   }, []);
 
   
 
 
-  // function handleDelete(id){
-  //   fetch('http://localhost:9292/posts/' + id, {
-  //   method: 'DELETE',
-  //   })
-  //   .then(res => res.json()) 
-  //   .then(() => setDeleted(!deleted))
-  // }
+  function handleClick(id){
+    fetch('http://localhost:9292/posts/'+id, {
+    method: 'DELETE',
+    })
+    .then(() =>setChange(!change))
+  }
+   
 
-
-
-
-    
-    //create a like button using state?
-    
-    
     return (
         <div className="card">
             <div className="post">
               <p>{post.content}</p>
-              <button className={console.log(Date())? 'h2b' : 'h2a'} variant="primary" >X</button>
+              {/* <button className={(show)?  'h2a':'h2b'} variant="primary" >X</button> */}
+              {show? <button className='h2a' onClick={() => handleClick(post.id)}>x</button> : ''}
               <p className="date">{new Date(post.created_at).toLocaleString()}</p>
               <form></form>
             </div>

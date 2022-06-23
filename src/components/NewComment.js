@@ -14,7 +14,7 @@ function NewComment({comments, change, setChange, post_id}){
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
-                content:comment,
+                content:comment,                                
                 post_id: post_id,
               }),
             }).then(()=>setChange(!change));
