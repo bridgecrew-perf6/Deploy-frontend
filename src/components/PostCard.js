@@ -37,6 +37,8 @@ function PostCard({post, change, setChange}) {
               <p>{post.content}</p>
               <button className={console.log(Date())? 'h2b' : 'h2a'} variant="primary" >X</button>
               <p className="date">{new Date(post.created_at).toLocaleString()}</p>
+              <Vote post_like={post.like}></Vote>
+
               <form></form>
             </div>
             <NewComment post_id={post.id} comments={post.comments} change={change}

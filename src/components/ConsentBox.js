@@ -1,35 +1,32 @@
 import React from 'react';
-import useState from 'react';
-import Alert from 'react-bootstrap/Alert';
-import Button from 'react-bootstrap/Button';
+// import { Button } from 'semantic-ui-react'
+import { useHistory } from 'react-router-dom';
 
 function ConsentBox() {
-    const [show, setShow] = useState(true);
-    // const [box, setBox] = useState(false);
+    const history=useHistory();
+
+    console.log('hi')
+
+    function handleClick(){
+      history.push("/Home") 
+    }
    
     return (
-      <>
-        <Alert show={show} variant="success">
-          <Alert.Heading>How's it going?!</Alert.Heading>
-          <p>
-            Rules of Conduct
-          </p>
-          <ul>
+      <div>
+        <img src='https://i.imgur.com/BXnUImb_d.webp?maxwidth=760&fidelity=grand' alt = 'mark made this' className='FlatYakImg'/>
+        <div class="consentBox">
+
+        <ul className="consentList">
             <li>Behave yourself</li>
             <li>Post must be in English</li>
             <li>NSFW guidelines</li>
             <li>No abusive or toxic behavior</li>
-          </ul>
-          <hr />
-          <div className="d-flex justify-content-end">
-            <Button onClick={() => setShow(false)} variant="outline-success">
-              Close me y'all!
-            </Button>
-          </div>
-        </Alert>
-  
-        {!show && <Button onClick={() => setShow(true)}>Show Alert</Button>}
-      </>
+            <li>You have 30 seconds to delete your post after creation</li>
+            <li>then its here forever :P</li>
+        </ul>
+      <button onClick={handleClick} className='AgreeButton'>I Agree!</button>
+        </div>
+      </div>
     );
   }
   
