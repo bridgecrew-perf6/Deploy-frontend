@@ -1,8 +1,7 @@
 import React, {useState} from "react";
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-function NewPost({change, setChange}) {
+function NewPost({change, setChange, id}) {
   const [newPost, setNewPost]=useState("")
 
   function handleSubmit(e){
@@ -16,7 +15,7 @@ function NewPost({change, setChange}) {
           body: JSON.stringify({
             content: newPost,
             like: 0, 
-            phase_id: 3,
+            phase_id: id,
           }),
         }).then(()=>setChange(!change));
         setNewPost("")
